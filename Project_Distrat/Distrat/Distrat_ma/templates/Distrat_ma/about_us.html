@@ -1,0 +1,967 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'Distrat_ma/img/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" href="{% static 'Distrat_ma/img/favicon-32x32.png' %}" sizes="32x32">
+        <link rel="icon" type="image/png" href="{% static 'Distrat_ma/img/favicon-16x16.png' %}" sizes="16x16">
+        <link rel="manifest" href="{% static 'Distrat_ma/img/manifest.json' %}">
+        <link rel="mask-icon" href="{% static 'Distrat_ma/img/safari-pinned-tab.svg' %}" color="#fa9465">
+        
+        <!-- theme color in phones -->
+        <meta name="theme-color" content="#FA9465"/>
+        
+        <!-- compatibility -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>Distrat | Qui Sommes Nous ?</title>
+
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+        <!--     Fonts and icons     -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+        <!-- CSS Files -->
+        <link href="{% static 'Distrat_ma/css/bootstrap.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'Distrat_ma/css/component.css' %}" rel="stylesheet" />
+        <link href="{% static 'Distrat_ma/css/demoLink.css' %}" rel="stylesheet" />
+        <link href="{% static 'Distrat_ma/css/normalize.css' %}" rel="stylesheet" />
+        <link href="{% static 'Distrat_ma/css/material-kit.css' %}" rel="stylesheet"/>
+        <link href="{% static 'Distrat_ma/css/demoMaterial.css' %}" rel="stylesheet" />
+
+        <style>
+            @media screen and (max-width: 995px) , screen and (max-height: 638px) {
+                .main-raised{
+
+                }
+            }
+            .main-raised{
+                box-shadow: none;
+            }
+            .cat_list_footer::before{
+                    position: absolute;
+                    display: block;
+                    content: " ";
+                    float: left;
+                    width: 0;
+                    height: 0;
+                    border-color: transparent;
+                    border-style: solid;
+                    border-width: 5px 0 5px 5px;
+                    border-left-color: rgba(250, 148, 101, .95);
+                    margin-top: 5px;
+                    left: -4vh;
+            }
+            #softas_img{
+                height: 2vh;
+            }
+            @media (max-width: 375px) {
+                #softas_img{
+                    height: 2vh !important;
+                }
+                #p_img .box_img {
+                    min-height: 50px !important;
+                    max-height: 100px !important;
+                }
+            }
+            .header{
+                -webkit-animation: bodyBackground 20s infinite;
+                -moz-animation: bodyBackground 20s infinite;
+                -o-animation: bodyBackground 20s infinite;
+                animation: bodyBackground 20s infinite;
+            }
+            @keyframes bodyBackground {
+                0%, 15%, 100%   { background-image: url('{% static 'Distrat_ma/img/showroom.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat; }
+                20%, 35%        { background-image: url('{% static 'Distrat_ma/img/showroom2.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat; }
+                40%, 55%        { background-image: url('{% static 'Distrat_ma/img/showroom.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat; }
+            }
+            @-moz-keyframes bodyBackground {
+                0%, 15%, 100%   { background-image: url('{% static 'Distrat_ma/img/showroom.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat; }
+                20%, 35%        { background-image: url('{% static 'Distrat_ma/img/showroom2.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat; }
+                40%, 55%        { background-image: url('{% static 'Distrat_ma/img/showroom.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat; }
+            }
+            @-webkit-keyframes bodyBackground {
+                0%, 15%, 100%   { background-image: url('{% static 'Distrat_ma/img/showroom.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat; }
+                20%, 35%        { background-image: url('{% static 'Distrat_ma/img/showroom2.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat; }
+                40%, 55%        { background-image: url('{% static 'Distrat_ma/img/showroom.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat; }
+            }
+            .topShelf span i {
+                font-weight: 500;
+                color: #fff;
+                font-size: 2em;
+                vertical-align: middle;
+                margin-right: 4% !important;
+            }
+            .mid_crisis *{
+                color: rgba(72, 72, 72, 1) !important;
+            }
+            #p_img .box_img{
+                min-height: 100px;
+                max-height: 140px;
+                width: auto;
+                height: auto;
+            }
+            #p_img img{
+                border-radius: 0;
+                box-shadow: initial;
+                height: 90%;
+                width: 90%;
+            }
+            @media (min-width: 1440px){
+                .bottomShelf div {
+                    height: 20vh !important;
+                }
+                .footer {
+                    height: 55vh !important;
+                    padding-bottom: 0;
+                }
+                .topShelf span{
+                    font-size: 2em !important;
+                }
+                .topShelf i{
+                    margin-right: 1% !important;
+                }
+                .middleShelf span{
+                    font-size: 1.5em !important;
+                }
+                .bottomShelf li a {
+                    font-size: 1.5em !important;
+                }
+                .footer h4{
+                    font-size: 1.7em !important;
+                    font-weight: 600;
+                }
+            }
+            @media (max-width: 1440px){
+                .bottomShelf div {
+                    height: initial !important;
+                }
+                .footer {
+                    height: initial !important;
+                    padding-bottom: 0;
+                }
+                .topShelf span{
+                    font-size: initial !important;
+                }
+                .topShelf i{
+                    margin-right: initial !important;
+                }
+                .middleShelf span{
+                    font-size: initial !important;
+                }
+                .bottomShelf li a {
+                    font-size: initial !important;
+                }
+                .footer h4{
+                    font-size: initial !important;
+                    font-weight: 600;
+                }
+                .main-raised {
+                    margin-top: -27% !important;
+                }
+            }
+            @media (max-width: 425px){
+                .groundShelf span{
+                    font-size: .7em !important;
+                }
+                .sm_col{
+                    text-align: right !important;
+                }
+                #b_s{
+                    display: none !important;
+                }
+                footer ul li {
+                    font-size: .8em !important;
+                }
+                .navbar-header{
+                    background-color: rgba(250, 148, 101, .8);
+                }
+                .navbar.navbar-transparent ul{
+                    background-color: rgba(250, 148, 101, .8);
+                }
+                .header h1{
+                    font-size: 30px !important;
+                }
+                .section h5{
+                    font-size: .8em !important;
+                }
+                .largetxt{
+                    font-size: .8em !important;
+                }
+                .features{
+                    padding-top: 10px !important;
+                }
+                .gridcol__inner{
+                    padding: 5px !important;
+                }
+                .topShelf span {
+                    font-size: .9em !important;
+                }
+                .topShelf i {
+                    font-size: 1em !important;
+                }
+                .team-player a{
+                    display: none;
+                }
+                .middleShelf span{
+                    font-size: .8em !important;
+                }
+                .bottomShelf span{
+                    font-size: .8em !important;
+                }
+                .topShelf span {
+                    font-size: .8em !important;
+                }
+                .topShelf i {
+                    font-size: 1em !important;
+                }
+            }
+            @media (max-width: 320px){
+                .topShelf span {
+                    font-size: 1.2em !important;
+                }
+                .topShelf i {
+                    font-size: 1.5em !important;
+                }
+            }
+            @media (max-width: 768px){
+                .header h2{
+                    font-size: 2.6em;
+                }
+                .header h3{
+                    font-size: 1.3em;
+                    line-height: 1.4em;
+                }
+                .footer .copyright {
+                    padding: 0 !important;
+                    display: contents !important;
+                }
+                .groundShelf span{
+                    display: inherit!important;
+                }
+                .topShelf div{
+                    font-size: .6em;
+                }
+                .sharing-area{
+                    width: 100%;
+                }
+                .c_list div{
+                    width: auto !important;
+                }
+                .c_list hr{
+                    display: none;
+                }
+                .navbar.navbar-transparent, .navbar .navbar-fixed-top .navbar-color-on-scroll{
+                    background-color: rgba(0,0,0,.1);
+                    padding-top: 0 !important;
+                    border-radius: 0;
+                    height: 70px !important;
+                }
+            }
+            .ripple-container{
+                opacity: 0;
+            }
+            .cl-effect-10 a.product::before {
+                padding: 10px 20px;
+            }
+            .cl-effect-10 a span:hover{
+                color: #FA9465 !important;
+            }
+            .boxDesc{
+                -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+                -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+            }
+            .info {
+                padding: 30px 0 30px !important;
+            }
+            .infoT{
+                max-width: 100%;
+            }
+            .gridcol:first-child {
+                padding-right: 10px;
+            }
+            .gridcol {
+                line-height: 1%;
+                position: relative;
+                opacity: 1;
+            }
+            .grid-feature:first-child .gridcol__outer {
+                right: 10px;
+            }
+            .gridcol__outer {
+                display: block;
+                overflow: hidden;
+                position: relative;
+            }
+            .grid-feature .gridcol__inner {
+                padding: 45px;
+                position: relative;
+            }
+            .grid-feature .gridcol__body {
+                position: relative;
+                top: 50%;
+                text-align: left;
+            }
+            .gridcol__body p:last-child {
+                margin-bottom: 0;
+            }
+            .gridcol__body p.largetxt {
+                font-size: 19px;
+                line-height: 1.368em;
+                letter-spacing: .05em;
+            }
+            .gridcol__body p {
+                font-family: "proxima-nova","helvetica","arial","sans";
+                font-size: 15px;
+                font-weight: 300;
+                letter-spacing: 0.02em;
+                line-height: 1.5em;
+                margin: 0 0 1.5em;
+                padding: 0;
+            }
+            .gridcol__body {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                text-align: center;
+                width: 100%;
+                z-index: 1;
+            }
+            .gridcol__inner {
+                display: block;
+                height: 100%;
+                position: relative;
+            }
+            .landing-page .header .container {
+                padding-top: 20vh !important;
+                text-align: center;
+            }
+            .index-page .wrapper > .header {
+                height: 100vh !important;
+            }
+            .index-page .header-filter:after {
+                background: -webkit-linear-gradient(135deg, rgba(250, 148, 101, 0.88) 0%, rgba(274, 147, 144, 0.45) 100%);
+            }
+            .navbar, .navbar.navbar-default {
+                background-color: #FA9465;
+            }
+            .footer{
+                height: 100vh;
+            }
+            .middleShelf i, .middleShelf ul {
+                display: inline;
+            }
+            .footer * {
+                color: rgba(250, 148, 101, .95);
+            }
+            .navbar .navbar-nav > li > a {
+                margin-top: 15px !important;
+                margin-bottom: 15px !important;
+                padding: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            .cl-effect-10 a span {
+                background: transparent !important;
+            }
+            .cl-effect-10 a::before {
+                color: #FA9465 !important;
+                left: -100%;
+            }
+            .middleShelf h4 {
+                font-weight: 500;
+                color: white;
+            }
+            .cl-effect-10 a:hover::before,
+            .cl-effect-10 a:focus::before {
+                -webkit-transform: translateX(100%) !important;
+                -moz-transform: translateX(100%) !important;
+                transform: translateX(100%) !important;
+            }
+            .active a::before {
+                -webkit-transform: translateX(100%) !important;
+                -moz-transform: translateX(100%) !important;
+                transform: translateX(100%) !important;
+            }
+            .active span{
+                color: #FA9465;
+            }
+            iframe{
+                width: 100% !important;
+            }
+            .navbar, .navbar.navbar-default {
+                padding: 0;
+            }
+            .footer{
+                background-color: #FA9465;
+            }
+            .sharing-area .btn {
+                margin: 0 4px 0;
+            }
+            .sharing-area {
+                margin-top: 0;
+            }
+            .footer hr{
+                padding: 0;
+                margin: 0;
+                opacity: 1;
+            }
+            .fbPost{
+                padding-bottom: 0;
+            }
+            .topShelf{
+                background-color: rgba(72, 72, 72, 1);
+                vertical-align: middle;
+            }
+            .topShelf span{
+                display:table-cell;
+                font-weight: 600;
+                color: #fff;
+                font-size: 1.2em;
+                vertical-align: middle;
+            }
+            .topShelf div{
+                display:table;
+                height: 10vh;
+                vertical-align: middle;
+            }
+            .middleShelf div{
+                display:table;
+                vertical-align: middle;
+            }
+            .middleShelf span{
+                color: #fff;
+                font-size: 1em;
+                vertical-align: middle;
+            }
+            bottomShelf h4 {
+                font-weight: 500;
+            }
+            .bottomShelf div{
+                display:table;
+                height: 40vh;
+                vertical-align: middle;
+            }
+            .bottomShelf span{
+                color: #fff;
+                font-size: 1.2em;
+                vertical-align: middle;
+            }
+            .bottomShelf ul{
+                vertical-align: middle;
+            }
+            .bottomShelf li a{
+                color: #fff;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 300;
+            }
+            .bottomShelf li{
+                display: list-item;
+            }
+            .groundShelf{
+                background-color: rgba(72, 72, 72, 1);
+                padding: 12px;
+            }
+            .groundShelf div{
+                display:table;
+                height: 4vh;
+                vertical-align: middle;
+                padding: 0;
+            }
+            .groundShelf span{
+                display:table-cell;
+                color: rgba(250, 148, 101, .95);
+                font-size: .7em;
+                vertical-align: middle;
+            }
+            .dropdown-submenu {
+                position: relative;
+            }
+            .dropdown-submenu>.dropdown-menu {
+                top: 0;
+                left: 101%;
+                margin-top: -6px;
+                margin-left: -1px;
+                -webkit-border-radius: 0 6px 6px 6px;
+                -moz-border-radius: 0 6px 6px;
+                border-radius: 0 6px 6px 6px;
+            }
+            .dropdown-submenu:hover>.dropdown-menu {
+                display: block;
+            }
+            .dropdown-submenu>a:after {
+                display: block;
+                content: " ";
+                float: right;
+                width: 0;
+                height: 0;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 5px 0 5px 5px;
+                border-left-color: #ccc;
+                margin-top: 5px;
+                margin-right: -10px;
+            }
+            .dropdown-submenu:hover>a:after {
+                border-left-color: #fff;
+            }
+            .dropdown-submenu.pull-left {
+                float: none;
+            }
+            .dropdown-submenu.pull-left>.dropdown-menu {
+                left: -100%;
+                margin-left: 10px;
+                -webkit-border-radius: 6px 0 6px 6px;
+                -moz-border-radius: 6px 0 6px 6px;
+                border-radius: 6px 0 6px 6px;
+            }
+            .navbar .dropdown-menu li > a:hover, .navbar .dropdown-menu li > a:focus, .navbar.navbar-default .dropdown-menu li > a:hover, .navbar.navbar-default .dropdown-menu li > a:focus {
+                color: #FFFFFF;
+                background-color: #FA9465;
+            }
+            .dropdown-menu {
+                min-width: 135%;
+            }
+            header hr {
+                margin: 30px auto;
+                border-color: #F05F40;
+                border-width: 3px;
+                max-width: 50px;
+            }
+            .main-raised{
+                margin-top: -40%;
+            }
+            @media (min-width: 1024px){
+                .main-raised{
+                    margin-top: -25% !important;
+                }
+            }
+            @media (min-width: 1440px){
+                .main-raised{
+                    margin-top: -32% !important;
+                }
+            }
+            @media (min-width: 768px) {
+                .main-raised {
+                    margin-top: -40% !important;
+                }
+            }
+        </style>
+    </head>
+
+    <body class="landing-page">
+        <nav class="navbar navbar-transparent navbar-absolute">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a style="margin: 15px 20px;" href="{% url 'Distrat_ma:index' %}">
+                    <div class="logo-container_custom">
+                        <div class="logo">
+                            <img style="height: 5vh; border-radius: 3px;" src="{% static 'Distrat_ma/img/logo.png' %}" alt="Distrat" rel="tooltip" data-placement="bottom" data-html="true">
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navigation-example">
+                    <ul class="nav navbar-nav navbar-right cl-effect-10">
+                        <li>
+                            <a href="{% url 'Distrat_ma:index' %}" data-hover="Accueil">
+                                <span>Accueil</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#" data-hover="Qui Sommes Nous ?">
+                                <span>Qui Sommes Nous ?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="product dropdown-toggle" data-toggle="dropdown" data-hover="Produits"><span>Produits</span></a>
+                            {% if latest_categorie_list %}
+                            <ul class="dropdown-menu multi-level">
+                                {% for categorie in latest_categorie_list %}
+                                <li class="dropdown-submenu">
+                                    <a href="{% url 'Distrat_ma:categories' categorie.id %}" id="{{ categorie.id }}" class="dropdown-toggle disabled" data-toggle="dropdown">{{ categorie.titre|capfirst }}</a>
+                                    {% if latest_souscategorie_list %}
+                                    <ul class="dropdown-menu">
+                                        {% for souscategorie in latest_souscategorie_list %}
+                                            {% if categorie.id == souscategorie.categorieid.id %}
+                                            <li><a href="{% url 'Distrat_ma:subcategories' souscategorie.id %}">{{ souscategorie.titre|capfirst }}</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                    {% else %}
+                                        <p>Something Went Wrong.</p>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                                <p>Something Went Wrong.</p>
+                            {% endif %}
+                        </li>
+                        <li>
+                            <a href="{% url 'Distrat_ma:samples' %}" data-hover="Realisations">
+                                <span>Realisations</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'Distrat_ma:showrooms' %}"  data-hover="Showrooms">
+                                <span>Showrooms</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="wrapper">
+            <div class="header header-filter" style="background-image: url('{% static 'Distrat_ma/img/b_g1.png' %}');">
+
+            </div>
+
+            <div class="main main-raised">
+                <div class="container-fluid">
+                    <div class="section text-center section-landing">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h2 style="margin-top: 0;" class="title"><img style="height: 10vh; border-radius: 3px;" src="{% static 'Distrat_ma/img/logo.png' %}" alt="Distrat" rel="tooltip" data-placement="bottom" data-html="true"></h2>
+                                <a href="https://www.youtube.com/" class="btn btn-danger btn-raised btn-lg">
+                                    <i class="fa fa-play"></i> Vidéo d'entreprise
+                                </a>
+                                <h5 class="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam est dolor, pellentesque non tortor a, vehicula iaculis augue. Aenean eget commodo tellus. Cras vitae nisl dignissim felis facilisis tempor. Quisque commodo, sapien eget dapibus placerat, est purus suscipit diam, vitae lacinia tellus turpis in ligula. Nulla eu varius elit, nec finibus est. Donec efficitur sed quam in ullamcorper. Maecenas et porta lorem. Quisque leo nulla, accumsan sit amet dapibus vel.
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="features">
+                            <div class="row">
+                                <div class="boxDesc col-md-6">
+                                    <div class="info infoT gridcol grid-feature">
+                                        <div class="gridcol__outer">
+                                            <div class="gridcol__inner grid-styles" data-bkgcolor="#ffffff" data-txtcolor="#00000" style="background-color: rgb(255, 255, 255);">
+                                                <div class="gridcol__body">
+                                                    <p class="largetxt">Hi! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam est dolor, pellentesque non tortor a, vehicula iaculis augue. Aenean eget commodo tellus. Cras vitae nisl dignissim felis facilisis tempor. Quisque commodo, sapien eget dapibus placerat, est purus suscipit diam, vitae lacinia tellus turpis in ligula. Nulla eu varius elit, nec finibus est. Donec efficitur sed quam in ullamcorper. Maecenas et porta lorem. Quisque leo nulla, accumsan sit amet dapibus vel.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="info">
+                                        <div class="icon icon-primary">
+                                            <i class="material-icons">lightbulb_outline</i>
+                                        </div>
+                                        <h4 class="info-title">Innovation</h4>
+                                        <p>Ce qui nous diffère dans le sens d'éliminer les veilles idées, d'oser, de faire attention à l'intersection entre l'imagination et la réalité dont on vit.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="info">
+                                        <div class="icon icon-success">
+                                            <i class="material-icons">verified_user</i>
+                                        </div>
+                                        <h4 class="info-title">Qualité</h4>
+                                        <p>Notre processus consiste à l'habitude d'amélioration continue, non pas de réparer rapidement ou temporairement</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="info">
+                                        <div class="icon icon-danger">
+                                            <i class="material-icons">monetization_on</i>
+                                        </div>
+                                        <h4 class="info-title">Prix</h4>
+                                        <p>équilibré, vertueux, la qualité et l'effort que nous mettons dans nos réalisation justifie à 100% nos prix</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section text-center">
+                        <h2 class="title">Voici Notre Equipe</h2>
+
+                        <div class="team">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="team-player">
+                                        <img src="{% static 'Distrat_ma/img/face.png' %}" alt="Thumbnail Image" class="img-raised img-circle">
+                                        <h4 class="title">F_Name L_NAME <br />
+                                            <small class="text-muted">POSITIONS</small>
+                                        </h4>
+                                        <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="team-player">
+                                        <img src="{% static 'Distrat_ma/img/face.png' %}" alt="Thumbnail Image" class="img-raised img-circle">
+                                        <h4 class="title">F_Name L_NAME <br />
+                                            <small class="text-muted">POSITION</small>
+                                        </h4>
+                                        <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="team-player">
+                                        <img src="{% static 'Distrat_ma/img/face.png' %}" alt="Thumbnail Image" class="img-raised img-circle">
+                                        <h4 class="title">F_Name L_NAME <br />
+                                            <small class="text-muted">POSITION</small>
+                                        </h4>
+                                        <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-google-plus"></i></a>
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-youtube-play"></i></a>
+                                        <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+            <div class="container-fluid">
+                <div class="topShelf row">
+                    <div class="col-md-4 col-xs-4 text-center">
+                        <span><i class="fa fa-truck col-xs-12" aria-hidden="true"></i>LIVRAISON À DOMICILE</span>
+                    </div>
+                    <div class="col-md-4 col-xs-4 text-center">
+                        <span><i class="fa fa-wrench col-xs-12" aria-hidden="true"></i>INSTALLATION CUISINE, SALLE DE BAIN ET PORTE</span>
+                    </div>
+                    <div class="col-md-4 col-xs-4 text-center">
+                        <span><i class="fa fa-certificate col-xs-12" aria-hidden="true"></i>JUSQU'À X ANS DE GARANTIE</span>
+                    </div>
+                </div>
+                <div class="mid_crisis" style="padding-left: 15px; padding-right: 15px; margin-left: -15px; margin-right: -15px; background-color: white; background-image: url(/static/Distrat_ma/img/texture.png);">
+                    <div class="middleShelf row">
+                    <div class="col-md-8 col-xs-12">
+                        <h4 style="color: rgba(250, 148, 101, .95) !important;">ABOUT US</h4>
+                        <hr>
+                        <span>Nous effectuons un service sur mesure pour la vente, l’installation et la mise en service de vos cuisines, salles de bain, portes. Venez visiter nos deux showrooms avec de nombreux modèles de cuisines et d’électroménagers, un large choix de matériaux et d' accessoires. Distrat vous offre un service 100% qualité, d’une conception personnalisée et d’un excellent suivi de projet. Nous sommes à vos côtés à chaque étape : de la conception à l’installation finale. Afin de mieux satisfaire notre clientèle</span>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <h4 style="color: rgba(250, 148, 101, .95) !important;">CONTACT INFO</h4>
+                        <hr>
+                        <span>
+                            <div class="sharing-area text-center">
+                                <div class="c_list" style="text-align: left; width: 100%;">
+                                    <div style="width: 100%;" class="col-xs-4 row contact_list">
+                                        <div style="padding: 0;" class="col-md-1 col-xs-1">
+                                            <i class="fa fa-map-marker icon-fixed-width" aria-hidden="true" style="color: rgba(250, 148, 101, .95) !important;"></i>
+                                        </div>
+                                        <div class="col-md-10 col-xs-10">
+                                            <ul>
+                                                <li>Résidence Moulay Ali Chrif</li>
+                                            </ul>
+                                            <br/>
+                                            <ul>
+                                                <li>N°2 Avenue des Far - El Menzeh<li>
+                                            </ul>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                    <div style="width: 100%;" class="col-xs-4 row contact_list">
+                                        <div style="padding: 0;" class="col-md-1 col-xs-1">
+                                            <i class="fa fa-phone icon-fixed-width" aria-hidden="true" style="color: rgba(250, 148, 101, .95) !important;"></i>
+                                        </div>
+                                        <div class="col-md-10 col-xs-10">
+                                            <ul>
+                                                <li>FIX : +212 535 516 447</li>
+                                            </ul>
+                                            <br/>
+                                            <ul>
+                                                <li>FAX : +212 535 516 449</li>
+                                            </ul>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                    <div style="width: 100%;" class="col-xs-4 row contact_list">
+                                        <div style="padding: 0;" class="col-md-1 col-xs-1">
+                                            <i class="fa fa-envelope icon-fixed-width" aria-hidden="true" style="color: rgba(250, 148, 101, .95) !important;"></i>
+                                        </div>
+                                        <div class="col-md-10 col-xs-10">
+                                            <ul>
+                                                <li>Contact@distrat.ma</li>
+                                            </ul>
+                                            <br/>
+                                            <ul>
+                                                <li>Cuisine@distrat.ma</li>
+                                            </ul>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <hr>
+                <div class="bottomShelf row">
+                    <div class="sm_col col-md-8 col-xs-12 pull-left">
+                        <h4 style="text-align: left; color: rgba(250, 148, 101, .95) !important;">NOS PARTENAIRES</h4>
+                        <hr>
+                        <div style="padding: 0;" class="section text-center">
+                        <div style="margin-top: 1%;" id="p_img" class="team">
+                            <div class="row">
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_1.jpg' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_2.jpg' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_3.gif' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_4.jpg' %}" alt="Thumbnail Image" style="width: 70%;-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_5.jpg' %}" alt="Thumbnail Image" style="width: 45%;border-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_6.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_7.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_8.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_9.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_10.jpg' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+                                            <img src="{% static 'Distrat_ma/img/p_11.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: .5%; visibility: hidden;" class="col-md-2 col-xs-2">
+                                    <div class="team-player">
+                                        <div class="box_img thumbnail" style="margin: 0">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="b_f" class="col-md-4 col-xs-12 pull-right">
+                        <h4 style="color: rgba(250, 148, 101, .95) !important;">NOS PRODUITS</h4>
+                        <hr>
+                        <span style="margin: 0;" class="row">
+                        {% if latest_categorie_list %}
+                            <div style="padding: 0;" class="col-md-1 col-xs-1">
+                            </div>
+                            <ul class="col-md-10 col-xs-10">
+                            {% for categorie in latest_categorie_list %}
+                                <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:categories' categorie.id %}">{{ categorie.titre|upper }}</a></li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>No polls are available.</p>
+                        {% endif %}
+                        </span>
+                    </div>
+                </div>
+                </div>
+                <div class="groundShelf row">
+                    <div class="copyright col-md-12 col-xs-12 text-center">
+                        <span>Copyright &copy; 2017, Tous les droits sont réservés | by <img id="softas_img" src="{% static 'Distrat_ma/img/softas_logo.png' %}">.</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        </div>
+    </body>
+
+	<!--   Core JS Files   -->
+	<script src="{% static 'Distrat_ma/js/jquery.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'Distrat_ma/js/bootstrap.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'Distrat_ma/js/material.min.js' %}"></script>
+
+	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+	<script src="{% static 'Distrat_ma/js/nouislider.min.js' %}" type="text/javascript"></script>
+
+	<!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
+	<script src="{% static 'Distrat_ma/js/bootstrap-datepicker.js' %}" type="text/javascript"></script>
+
+	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
+	<script src="{% static 'Distrat_ma/js/material-kit.js' %}" type="text/javascript"></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93841217-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</html>
