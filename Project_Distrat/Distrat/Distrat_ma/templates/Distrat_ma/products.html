@@ -1,9 +1,0 @@
-<h1>{{ souscategorie.titre }}</h1>
-
-<ul>
-{% for souscategorie in categorie.souscategorie_set.all %}
-    <li>{{ souscategorie.titre }}</li>
-{% endfor %}
-</ul>
-
-<a href="{% url 'primary_app:detail' souscategorie.id %}">Vote again?</a>

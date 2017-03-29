@@ -92,6 +92,8 @@ class Categorie(models.Model):
     class Meta:
         managed = False
         db_table = 'categorie'
+    def __str__(self):
+        return self.titre
 
 
 class Couleur(models.Model):
@@ -127,6 +129,8 @@ class Couleurproduit(models.Model):
         managed = False
         db_table = 'couleurproduit'
         unique_together = ('produitid', 'couleurid')
+    def __str__(self):
+        return self.urlimage
 
 
 class DjangoAdminLog(models.Model):
@@ -197,6 +201,9 @@ class Produit(models.Model):
         managed = False
         db_table = 'produit'
 
+    def __str__(self):
+        return self.designation
+
 
 class Realisation(models.Model):
     id = models.AutoField(db_column='Id', primary_key=True)  # Field name made lowercase.
@@ -218,6 +225,9 @@ class Realisation(models.Model):
         managed = False
         db_table = 'realisation'
 
+    def __str__(self):
+        return self.titre
+
 
 class Service(models.Model):
     id = models.AutoField(db_column='Id', primary_key=True)  # Field name made lowercase.
@@ -236,6 +246,24 @@ class Service(models.Model):
         managed = False
         db_table = 'service'
 
+    def __str__(self):
+        return self.titre
+
+
+class Avis(models.Model):
+    id = models.AutoField(db_column='Id', primary_key=True)
+    f_name = models.CharField(db_column="f_name", max_length=25)
+    l_name = models.CharField(db_column="l_name", max_length=25)
+    avis_text = models.CharField(db_column="avis_text", max_length=500)
+    dt_created = models.DateTimeField(db_column='dt_created')
+
+    class Meta:
+        managed = False
+        db_table = 'avis'
+
+    def __str__(self):
+        return self.avis_text
+            
 
 class Souscategorie(models.Model):
     id = models.AutoField(db_column='Id', primary_key=True)  # Field name made lowercase.
@@ -252,6 +280,9 @@ class Souscategorie(models.Model):
     class Meta:
         managed = False
         db_table = 'souscategorie'
+
+    def __str__(self):
+        return self.titre
 
 
 class User(models.Model):
@@ -271,3 +302,6 @@ class User(models.Model):
     class Meta:
         managed = False
         db_table = 'user'
+
+    def __str__(self):
+        return self.nom
