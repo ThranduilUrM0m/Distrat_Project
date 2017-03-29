@@ -33,6 +33,12 @@
         <link href="{% static 'Distrat_ma/css/demoMaterial.css' %}" rel="stylesheet" />
 
         <style>
+            .footer *{
+                text-transform: capitalize;
+            }
+            .mid_crisis *{
+                font-size: 15px !important;
+            }
             @media screen and (max-width: 995px) , screen and (max-height: 638px) {
                 .main-raised{
 
@@ -267,7 +273,7 @@
             .cl-effect-10 a.product::before {
                 padding: 10px 20px;
             }
-            .cl-effect-10 a span:hover{
+            .cl-effect-10 a span:hover, .cl-effect-10 a:focus span{
                 color: #FA9465 !important;
             }
             .boxDesc{
@@ -555,6 +561,53 @@
     </head>
 
     <body class="landing-page">
+
+    <div style="position: fixed; top: 50vh; left: -1vh; z-index: 999;" class="center">
+        <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">
+        <i class="material-icons" style="font-size: 5vh;">contact_mail</i>
+        </button>
+    </div>
+
+
+<!-- line modal -->
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h3 class="modal-title" id="lineModalLabel">Nous-Contactez</h3>
+        </div>
+        <div class="modal-body">
+            
+            <!-- content goes here -->
+            <form accept-charset="UTF-8"  id="contactSubmit" action="https://formspree.io/zakariaeboutaleb@gmail.com" method="POST">{% csrf_token %}
+              <div class="form-group">
+                <label for="exampleInputEmail1">Addresse Email</label>
+                <input type="email" class="form-control" name="_replyto" id="exampleInputEmail1" placeholder="email@email...">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Nom</label>
+                <input type="name" class="form-control" name="first_name" id="exampleInputName1" placeholder="Nom">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputName2">Prénom</label>
+                <input type="name" class="form-control" name="last_name" id="exampleInputName2" placeholder="Prénom">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputSujet">Sujet</label>
+                <input type="name" class="form-control" name="subject" id="exampleInputSujet" placeholder="Sujet">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputMessage">Message</label>
+                <input type="name" class="form-control" name="message" id="exampleInputMessage" placeholder="...">
+              </div>
+              <button type="submit" class="btn btn-default">Envoyer</button>
+            </form>
+
+        </div>
+    </div>
+  </div>
+</div>
         <nav class="navbar navbar-transparent navbar-absolute">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -582,9 +635,17 @@
                             </a>
                         </li>
                         <li class="active">
-                            <a href="#" data-hover="Qui Sommes Nous ?">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Qui Sommes Nous ?">
                                 <span>Qui Sommes Nous ?</span>
                             </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Présentation du Societé</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'Distrat_ma:engagements' %}">Nos Engagements</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#" class="product dropdown-toggle" data-toggle="dropdown" data-hover="Produits"><span>Produits</span></a>
@@ -689,9 +750,39 @@
                             </div>
                         </div>
                     </div>
-
+                    <div  style="height: 100vh;" class="row">
+                        <div class="col-md-1 col-xs-1"></div>
+                        <div class="col-md-5 col-xs-12 thumbnail" style="margin: 1vh; height: 100%;">
+                            <div class="thumbnail">
+                                <img src="{% static 'Distrat_ma/img/sh_1.jpg' %}" alt="" style="width: 500px; height: 300px;">
+                                <div class="caption">
+                                    <h4>SHOWROOM 1</h4>
+                                    <p><strong>Adresse</strong> : Résidance Molay Ali Cherif N°2 Av Des Far El Menzeh, Route Fès - Meknès</p>
+                                    <p><strong>Tél</strong> : +212 535 516 447</p>
+                                    <p><strong>Fax</strong> : +212 535 516 449</p>
+                                    <p><strong>Mail</strong> : distrat_contact@distrat.ma</p>
+                                    <p><strong>Horaires</strong> : Du Lundi au Vendredi de 08h30 à 12h30 - 14h30 à 18h30</p>
+                                    <p>Samedi de 08h30 à 14h00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-xs-12 thumbnail" style="margin: 1vh; height: 100%;">
+                            <div class="thumbnail">
+                                <img src="{% static 'Distrat_ma/img/sh_2.jpg' %}" alt="" style="width: 500px; height: 300px;">
+                                <div class="caption">
+                                    <h4>SHOWROOM 2</h4>
+                                    <p><strong>Adresse</strong> : Immeuble E76 Al Ismailia Marjane - Meknès</p>
+                                    <p><strong>Tél</strong> : +212 535 459 077</p>
+                                    <p><strong>Fax</strong> : +212 535 459 077</p>
+                                    <p><strong>Mail</strong> : distrat_contact@distrat.ma</p>
+                                    <p><strong>Horaires</strong> : Du Lundi au Vendredi de 08h30 à 12h30 - 14h30 à 18h30</p>
+                                    <p>Samedi de 08h30 à 14h00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="section text-center">
-                        <h2 class="title">Voici Notre Equipe</h2>
+                        <h2  style="font-family: 'Caslon Book BE Regular';" class="title">Voici Notre Equipe</h2>
 
                         <div class="team">
                             <div class="row">
@@ -737,205 +828,278 @@
                 </div>
             </div>
             <footer class="footer">
-            <div class="container-fluid">
-                <div class="topShelf row">
-                    <div class="col-md-4 col-xs-4 text-center">
-                        <span><i class="fa fa-truck col-xs-12" aria-hidden="true"></i>LIVRAISON À DOMICILE</span>
-                    </div>
-                    <div class="col-md-4 col-xs-4 text-center">
-                        <span><i class="fa fa-wrench col-xs-12" aria-hidden="true"></i>INSTALLATION CUISINE, SALLE DE BAIN ET PORTE</span>
-                    </div>
-                    <div class="col-md-4 col-xs-4 text-center">
-                        <span><i class="fa fa-certificate col-xs-12" aria-hidden="true"></i>JUSQU'À X ANS DE GARANTIE</span>
-                    </div>
-                </div>
-                <div class="mid_crisis" style="padding-left: 15px; padding-right: 15px; margin-left: -15px; margin-right: -15px; background-color: white; background-image: url(/static/Distrat_ma/img/texture.png);">
-                    <div class="middleShelf row">
-                    <div class="col-md-8 col-xs-12">
-                        <h4 style="color: rgba(250, 148, 101, .95) !important;">ABOUT US</h4>
-                        <hr>
-                        <span>Nous effectuons un service sur mesure pour la vente, l’installation et la mise en service de vos cuisines, salles de bain, portes. Venez visiter nos deux showrooms avec de nombreux modèles de cuisines et d’électroménagers, un large choix de matériaux et d' accessoires. Distrat vous offre un service 100% qualité, d’une conception personnalisée et d’un excellent suivi de projet. Nous sommes à vos côtés à chaque étape : de la conception à l’installation finale. Afin de mieux satisfaire notre clientèle</span>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                        <h4 style="color: rgba(250, 148, 101, .95) !important;">CONTACT INFO</h4>
-                        <hr>
-                        <span>
-                            <div class="sharing-area text-center">
-                                <div class="c_list" style="text-align: left; width: 100%;">
-                                    <div style="width: 100%;" class="col-xs-4 row contact_list">
-                                        <div style="padding: 0;" class="col-md-1 col-xs-1">
-                                            <i class="fa fa-map-marker icon-fixed-width" aria-hidden="true" style="color: rgba(250, 148, 101, .95) !important;"></i>
-                                        </div>
-                                        <div class="col-md-10 col-xs-10">
-                                            <ul>
-                                                <li>Résidence Moulay Ali Chrif</li>
-                                            </ul>
-                                            <br/>
-                                            <ul>
-                                                <li>N°2 Avenue des Far - El Menzeh<li>
-                                            </ul>
-                                            <br/>
-                                        </div>
-                                    </div>
-                                    <div style="width: 100%;" class="col-xs-4 row contact_list">
-                                        <div style="padding: 0;" class="col-md-1 col-xs-1">
-                                            <i class="fa fa-phone icon-fixed-width" aria-hidden="true" style="color: rgba(250, 148, 101, .95) !important;"></i>
-                                        </div>
-                                        <div class="col-md-10 col-xs-10">
-                                            <ul>
-                                                <li>FIX : +212 535 516 447</li>
-                                            </ul>
-                                            <br/>
-                                            <ul>
-                                                <li>FAX : +212 535 516 449</li>
-                                            </ul>
-                                            <br/>
-                                        </div>
-                                    </div>
-                                    <div style="width: 100%;" class="col-xs-4 row contact_list">
-                                        <div style="padding: 0;" class="col-md-1 col-xs-1">
-                                            <i class="fa fa-envelope icon-fixed-width" aria-hidden="true" style="color: rgba(250, 148, 101, .95) !important;"></i>
-                                        </div>
-                                        <div class="col-md-10 col-xs-10">
-                                            <ul>
-                                                <li>Contact@distrat.ma</li>
-                                            </ul>
-                                            <br/>
-                                            <ul>
-                                                <li>Cuisine@distrat.ma</li>
-                                            </ul>
-                                            <br/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </span>
-                    </div>
-                </div>
-                <hr>
-                <div class="bottomShelf row">
-                    <div class="sm_col col-md-8 col-xs-12 pull-left">
-                        <h4 style="text-align: left; color: rgba(250, 148, 101, .95) !important;">NOS PARTENAIRES</h4>
-                        <hr>
-                        <div style="padding: 0;" class="section text-center">
-                        <div style="margin-top: 1%;" id="p_img" class="team">
-                            <div class="row">
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_1.jpg' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_2.jpg' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_3.gif' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_4.jpg' %}" alt="Thumbnail Image" style="width: 70%;-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_5.jpg' %}" alt="Thumbnail Image" style="width: 45%;border-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_6.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_7.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_8.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_9.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_10.jpg' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: .5%" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-                                            <img src="{% static 'Distrat_ma/img/p_11.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="padding: .5%; visibility: hidden;" class="col-md-2 col-xs-2">
-                                    <div class="team-player">
-                                        <div class="box_img thumbnail" style="margin: 0">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="container-fluid">
+                    
+                    <!-- First Level -->
+                    <div class="topShelf row">
+                        <div class="col-md-4 col-xs-4 text-center">
+                            <span><i class="fa fa-truck col-xs-12" aria-hidden="true"></i>LIVRAISON À DOMICILE</span>
+                        </div>
+                        <div class="col-md-4 col-xs-4 text-center">
+                            <span><i class="fa fa-wrench col-xs-12" aria-hidden="true"></i>INSTALLATION CUISINE, SALLE DE BAIN ET PORTE</span>
+                        </div>
+                        <div class="col-md-4 col-xs-4 text-center">
+                            <span><i class="fa fa-certificate col-xs-12" aria-hidden="true"></i>JUSQU'À X ANS DE GARANTIE</span>
                         </div>
                     </div>
-                    </div>
-                    <div id="b_f" class="col-md-4 col-xs-12 pull-right">
-                        <h4 style="color: rgba(250, 148, 101, .95) !important;">NOS PRODUITS</h4>
-                        <hr>
-                        <span style="margin: 0;" class="row">
-                        {% if latest_categorie_list %}
-                            <div style="padding: 0;" class="col-md-1 col-xs-1">
+                    <!-- End First Level -->
+                    
+                    <!-- Second Level -->
+                    <div class="mid_crisis" style="padding-left: 15px; padding-right: 15px; margin-left: -15px; margin-right: -15px; background-color: white; background-image: url(/static/Distrat_ma/img/texture.png);">
+                        <div class="container">
+                        <!-- First Story -->
+                        <div class="middleShelf row">
+                            <div class="sm_col col-md-9 col-xs-12 pull-left">
+                                <h4 style="text-align: left; color: rgba(250, 148, 101, .95) !important;">NOS PARTENAIRES</h4>
+                                <hr>
+                                <div style="padding: 0;" class="section text-center">
+                                    <div style="margin-top: 1%;" id="p_img" class="team">
+                                        <div class="row">
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_1.jpg' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_2.jpg' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_3.gif' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_4.jpg' %}" alt="Thumbnail Image" style="width: 70%;border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_5.jpg' %}" alt="Thumbnail Image" style="width: 45%;border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_6.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_7.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_8.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_9.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_10.jpg' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_11.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="padding: .5%" class="col-md-2 col-xs-2">
+                                                <div class="team-player">
+                                                    <div class="box_img thumbnail" style="margin: 0">
+                                                        <img src="{% static 'Distrat_ma/img/p_12.png' %}" alt="Thumbnail Image" style="border-radius: 0;" class="img-raised img-circle">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <ul class="col-md-10 col-xs-10">
-                            {% for categorie in latest_categorie_list %}
-                                <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:categories' categorie.id %}">{{ categorie.titre|upper }}</a></li>
-                            {% endfor %}
-                            </ul>
-                        {% else %}
-                            <p>No polls are available.</p>
-                        {% endif %}
-                        </span>
+                            <div class="col-md-3 col-xs-12">
+                                <h4 style="color: rgba(250, 148, 101, .95) !important;">CONTACT INFO</h4>
+                                <hr>
+                                <span>
+                                    <div class="sharing-area text-center">
+                                        <div class="c_list" style="text-align: left; width: 100%;">
+                                            <div style="width: 100%;" class="col-xs-4 row contact_list">
+                                                <div style="padding: 0;" class="col-md-1 col-xs-1">
+                                                    <i class="fa fa-map-marker icon-fixed-width" aria-hidden="true" style="color: rgba(250, 148, 101, .95) !important;"></i>
+                                                </div>
+                                                <div class="col-md-11 col-xs-11">
+                                                    <ul>
+                                                        <li>Résidence Moulay Ali Chrif</li>
+                                                    </ul>
+                                                    <br/>
+                                                    <ul>
+                                                        <li>N°2 Avenue des Far - El Menzeh<li>
+                                                    </ul>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                            <div style="width: 100%;" class="col-xs-4 row contact_list">
+                                                <div style="padding: 0;" class="col-md-1 col-xs-1">
+                                                    <i class="fa fa-phone icon-fixed-width" aria-hidden="true" style="color: rgba(250, 148, 101, .95) !important;"></i>
+                                                </div>
+                                                <div class="col-md-11 col-xs-11">
+                                                    <ul>
+                                                        <li>FIX : +212 535 516 447</li>
+                                                    </ul>
+                                                    <br/>
+                                                    <ul>
+                                                        <li>FAX : +212 535 516 449</li>
+                                                    </ul>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                            <div style="width: 100%;" class="col-xs-4 row contact_list">
+                                                <div style="padding: 0;" class="col-md-1 col-xs-1">
+                                                    <i class="fa fa-envelope icon-fixed-width" aria-hidden="true" style="color: rgba(250, 148, 101, .95) !important;"></i>
+                                                </div>
+                                                <div class="col-md-11 col-xs-11">
+                                                    <ul>
+                                                        <li>Contact@distrat.ma</li>
+                                                    </ul>
+                                                    <br/>
+                                                    <ul>
+                                                        <li>Cuisine@distrat.ma</li>
+                                                    </ul>
+                                                    <br/>
+                                                </div>
+                                            </div>
+                                            <div style="width: 100%;" class="col-xs-4 row contact_list">
+                                                <hr>
+                                                <ul >
+                                                    <li>
+                                                        <a style="margin: 0;" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                                                            <i style="font-size: 5vh !important;" class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a style="margin: 0;" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                                                            <i style="font-size: 5vh !important;" class="fa fa-facebook-square"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a style="margin: 0;" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                                                            <i style="font-size: 5vh !important;" class="fa fa-instagram"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a style="margin: 0;" rel="tooltip" title="Subscribe to Our Channel" data-placement="bottom" href="https://www.youtube.com/" target="_blank" class="btn btn-white btn-simple btn-just-icon">
+                                                            <i style="font-size: 5vh !important;" class="fa fa-youtube"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- End First Story -->
+                        
+                        <hr>
+                        
+                        <!-- Second Story -->
+                        <div class="bottomShelf row">
+                            <div class="col-md-3 col-xs-12">
+                                <h4 style="color: rgba(250, 148, 101, .95) !important;">Menu</h4>
+                                <hr>
+                                <span style="margin: 0;" class="row">
+                                    <div style="padding: 0;" class="col-md-1 col-xs-1">
+                                    </div>
+                                    <ul class="col-md-10 col-xs-10">
+                                        <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:index' %}">Accueil</a></li>
+                                        <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:samples' %}">Réalisations</a></li>
+                                        <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:showrooms' %}">Showrooms</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <h4 style="color: rgba(250, 148, 101, .95) !important;">Qui Sommes Nous ?</h4>
+                                <hr>
+                                <span style="margin: 0;" class="row">
+                                    <div style="padding: 0;" class="col-md-1 col-xs-1">
+                                    </div>
+                                    <ul class="col-md-10 col-xs-10">
+                                        <li class="cat_list_footer"><a style="font-size: .9em !important;" href="#">Présentation Du Société</a></li>
+                                        <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:engagements' %}">Nos Engagements</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <h4 style="color: rgba(250, 148, 101, .95) !important;">Nos Produits</h4>
+                                <hr>
+                                <span style="margin: 0;" class="row">
+                                {% if latest_categorie_list %}
+                                    <div style="padding: 0;" class="col-md-1 col-xs-1">
+                                    </div>
+                                    <ul class="col-md-10 col-xs-10">
+                                    {% for categorie in latest_categorie_list %}
+                                        <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:categories' categorie.id %}">{{ categorie.titre|capfirst }}</a></li>
+                                    {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <p>Something Went Wrong.</p>
+                                {% endif %}
+                                </span>
+                            </div>
+                            <div class="col-md-3 col-xs-12" style="margin-top: 4%;">
+                                <a style="margin: 15px 20px;" href="{% url 'Distrat_ma:index' %}">
+                                    <div class="logo-container_custom">
+                                        <div class="logo">
+                                            <img style="height: 5vh; border-radius: 3px;" src="{% static 'Distrat_ma/img/logo.png' %}" alt="Distrat" rel="tooltip" data-placement="bottom" data-html="true">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Second Story -->
+                        </div>
                     </div>
-                </div>
-                </div>
-                <div class="groundShelf row">
-                    <div class="copyright col-md-12 col-xs-12 text-center">
-                        <span>Copyright &copy; 2017, Tous les droits sont réservés | by <img id="softas_img" src="{% static 'Distrat_ma/img/softas_logo.png' %}">.</span>
+                    <!-- End Second Level -->
+                    
+                    <!-- Last Level -->
+                    <div class="groundShelf row">
+                        <div class="copyright col-md-12 col-xs-12 text-center">
+                            <span>Copyright &copy; 2017, Tous les droits sont réservés | by <img id="softas_img" src="{% static 'Distrat_ma/img/softas_logo.png' %}">.</span>
+                        </div>
                     </div>
+                    <!-- End Last Level -->
+                    
                 </div>
-            </div>
-        </footer>
+            </footer>
+            <!-- End Footer -->
 
         </div>
     </body>

@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#FA9465"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Distrat | Realisations</title>
+	<title>Distrat | Nos Engagements</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+	<link href="https://fonts.googleapis.com/css?family=Gudea" rel="stylesheet">
 
 	<!-- CSS Files -->
     <link href="{% static 'Distrat_ma/css/bootstrap.min.css' %}" rel="stylesheet" />
@@ -35,6 +36,213 @@
             .mid_crisis *{
                 font-size: 15px !important;
             }
+		.brand {
+            position: relative;
+            z-index: 99;
+            margin-top: 30vh;
+		    color: #FFFFFF;
+		    text-align: center;
+        }
+        .brand h3{
+            margin-top: 0;
+            position: relative;
+            font-size: 6rem;
+            font-weight: 400;
+            line-height: 1.2;
+            text-transform: uppercase;
+            font-family: 'Gudea', sans-serif;
+        }
+        .brand p{
+            font-size: 1.4rem;
+            letter-spacing: 0.25em;
+            line-height: 1.65;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-family: "Lekton", sans-serif;
+        }
+.timeline {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+}
+
+    .timeline:before {
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        content: " ";
+        width: 3px;
+        background-color: #eeeeee;
+        left: 50%;
+        margin-left: -1.5px;
+    }
+
+    .timeline > li {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+        .timeline > li:before,
+        .timeline > li:after {
+            content: " ";
+            display: table;
+        }
+
+        .timeline > li:after {
+            clear: both;
+        }
+
+        .timeline > li:before,
+        .timeline > li:after {
+            content: " ";
+            display: table;
+        }
+
+        .timeline > li:after {
+            clear: both;
+        }
+
+        .timeline > li > .timeline-panel {
+            width: 46%;
+            float: left;
+            border: 1px solid #d4d4d4;
+            border-radius: 2px;
+            padding: 20px;
+            position: relative;
+            -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+        }
+
+            .timeline > li > .timeline-panel:before {
+                position: absolute;
+                top: 26px;
+                right: -15px;
+                display: inline-block;
+                border-top: 15px solid transparent;
+                border-left: 15px solid #ccc;
+                border-right: 0 solid #ccc;
+                border-bottom: 15px solid transparent;
+                content: " ";
+            }
+
+            .timeline > li > .timeline-panel:after {
+                position: absolute;
+                top: 27px;
+                right: -14px;
+                display: inline-block;
+                border-top: 14px solid transparent;
+                border-left: 14px solid #fff;
+                border-right: 0 solid #fff;
+                border-bottom: 14px solid transparent;
+                content: " ";
+            }
+
+        .timeline > li > .timeline-badge {
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1.4em;
+            text-align: center;
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            margin-left: -25px;
+            background-color: #999999;
+            z-index: 100;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+        }
+
+            .timeline > li.timeline-inverted > .timeline-panel:before {
+                border-left-width: 0;
+                border-right-width: 15px;
+                left: -15px;
+                right: auto;
+            }
+
+            .timeline > li.timeline-inverted > .timeline-panel:after {
+                border-left-width: 0;
+                border-right-width: 14px;
+                left: -14px;
+                right: auto;
+            }
+
+.timeline-badge.primary {
+    background-color: #2e6da4 !important;
+}
+
+.timeline-badge.success {
+    background-color: #3f903f !important;
+}
+
+.timeline-badge.warning {
+    background-color: #f0ad4e !important;
+}
+
+.timeline-badge.danger {
+    background-color: #d9534f !important;
+}
+
+.timeline-badge.info {
+    background-color: #5bc0de !important;
+}
+
+.timeline-title {
+    margin-top: 0;
+    color: inherit;
+}
+
+.timeline-body > p,
+.timeline-body > ul {
+    margin-bottom: 0;
+}
+
+    .timeline-body > p + p {
+        margin-top: 5px;
+    }
+
+@media (max-width: 767px) {
+    ul.timeline:before {
+        left: 40px;
+    }
+
+    ul.timeline > li > .timeline-panel {
+        width: calc(100% - 90px);
+        width: -moz-calc(100% - 90px);
+        width: -webkit-calc(100% - 90px);
+    }
+
+    ul.timeline > li > .timeline-badge {
+        left: 15px;
+        margin-left: 0;
+        top: 16px;
+    }
+
+    ul.timeline > li > .timeline-panel {
+        float: right;
+    }
+
+        ul.timeline > li > .timeline-panel:before {
+            border-left-width: 0;
+            border-right-width: 15px;
+            left: -15px;
+            right: auto;
+        }
+
+        ul.timeline > li > .timeline-panel:after {
+            border-left-width: 0;
+            border-right-width: 14px;
+            left: -14px;
+            right: auto;
+        }
+}
         .main-raised{
             box-shadow: none;
         }
@@ -65,10 +273,7 @@
             }
         }
         .header{
-            -webkit-animation: bodyBackground 20s infinite;
-            -moz-animation: bodyBackground 20s infinite;
-            -o-animation: bodyBackground 20s infinite;
-            animation: bodyBackground 20s infinite;
+            background-image: url('{% static 'Distrat_ma/img/masthead-dot-lines3.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat;
         }
         @keyframes bodyBackground {
             0%, 15%, 100%   { background-image: url('{% static 'Distrat_ma/img/showroom.jpg' %}'); background-size: 100% 100%; background-repeat: no-repeat; }
@@ -100,30 +305,14 @@
             height: 90%;
             width: 90%;
         }
-        .main-raised{
-            margin-top: -40%;
-        }
-        @media (min-width: 1024px){
-            .main-raised{
-                margin-top: -25% !important;
-            }
-        }
-        @media (min-width: 1440px){
-            .main-raised{
-                margin-top: -32% !important;
-            }
-        }
         @media (min-width: 768px){
-            .main-raised{
-                margin-top: -40% !important;
-            }
             #realisation_img{
                 height: 200px !important;
             }
         }
         @media (max-width: 768px){
             .main-raised{
-                height: 100vh !important;
+                height: auto !important;
             }
         }
         @media (max-width: 425px){
@@ -625,7 +814,7 @@
                             <span>Accueil</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Qui Sommes Nous ?">
                             <span>Qui Sommes Nous ?</span>
                         </a>
@@ -634,7 +823,7 @@
                                 <a href="{% url 'Distrat_ma:about_us' %}">Présentation du Societé</a>
                             </li>
                             <li>
-                                <a href="{% url 'Distrat_ma:engagements' %}">Nos Engagements</a>
+                                <a href="#">Nos Engagements</a>
                             </li>
                         </ul>
                     </li>
@@ -663,8 +852,8 @@
                             <p>No products are available.</p>
                         {% endif %}
                     </li>
-                    <li class="active">
-                        <a href="#" data-hover="Realisations">
+                    <li>
+                        <a href="{% url 'Distrat_ma:samples' %}" data-hover="Realisations">
                             <span>Realisations</span>
                         </a>
                     </li>
@@ -679,56 +868,115 @@
     </nav>
 
     <div class="wrapper">
-        <div class="header header-filter" style="background-image: url('{% static 'Distrat_ma/img/b_g1.png' %}');">
+        <div class="header header-filter">
             <div class="container-fluid">
+            	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				  </ol>
+
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox" style="height: 80vh;">
+				    <div class="item active" style="height: 80%;">
+				      <div class="carousel-caption">
+				       	<div class="brand">
+                            <h3 style="color: #fff;">Une Livraison en temps et en heures.</h3>
+                        </div>
+				      </div>
+				    </div>
+				    <div class="item" style="height: 80%;">
+				      <div class="carousel-caption">
+				        <div class="brand">
+                            <h3 style="color: #fff;">Un service d'assistance.</h3>
+                        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
             </div>
         </div>
 
-		<div class="main main-raised" style="height: 82vh;">
+		<div class="main main-raised">
 			<div class="container-fluid">
 		    	<div class="section text-center section-landing">
                     <div class="row">
-                        <div class="col-lg-10 col-lg-offset-1 text-center">
-                            <h2 style="margin-top: 0;">Nos Realisations</h2>
-                            <hr class="small">
-                            <div class="row">
-                                {% if realisations.has_other_pages %}
-                                      <ul style="margin: 0 !important; margin-top: -5% !important;" class="pagination pull-right">
-                                        {% if realisations.has_previous %}
-                                          <li><a href="?page={{ realisations.previous_page_number }}">&laquo;</a></li>
-                                        {% else %}
-                                          <li class="disabled"><span>&laquo;</span></li>
-                                        {% endif %}
-                                        {% for i in realisations.paginator.page_range %}
-                                          {% if realisations.number == i %}
-                                            <li class="active"><span style="color: white !important;">{{ i }} <span class="sr-only">(current)</span></span></li>
-                                          {% else %}
-                                            <li><a href="?page={{ i }}">{{ i }}</a></li>
-                                          {% endif %}
-                                        {% endfor %}
-                                        {% if realisations.has_next %}
-                                          <li><a href="?page={{ realisations.next_page_number }}">&raquo;</a></li>
-                                        {% else %}
-                                          <li class="disabled"><span>&raquo;</span></li>
-                                        {% endif %}
-                                      </ul>
-                                    {% endif %}
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            {% for realisation in realisations %}
-                                            <div class="col-xs-12 col-md-3">
-                                                {% static "Distrat_ma/img/" as baseUrl %}
-                                                <a href="{{ baseUrl }}{{realisation.urlimage}}" class="thumbnail" data-gallery="example-gallery" data-toggle="lightbox" class="col-sm-4" data-title="{{realisation.titre}}" data-footer="{{ realisation.reference }}">
-                                                  <img id="realisation_img" class="img-fluid" style="width: 100%; height: 270px;" src="{{ baseUrl }}{{realisation.urlimage}}" alt="{{realisation.reference}}">
-                                                </a>
-                                            </div>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
+                        <div class="container">
+                            <div class="page-header">
+                                <h2 id="timeline" style="margin-top: 0; font-family: 'Caslon Book BE Regular'; font-size: 8vh; text-align: center;">Nos Engagements</h2>
                             </div>
-                            <!-- panel -->
+                            <ul class="timeline">
+                                <li>
+                                  <div class="timeline-badge"><i class="material-icons">all_out</i></div>
+                                  <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                      <h4 class="timeline-title">Accueil</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                      <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                  <div class="timeline-badge warning"><i class="material-icons">all_out</i></div>
+                                  <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                      <h4 class="timeline-title">Ecoute-Conseil</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                      <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                      <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no mé, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet mé vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="timeline-badge danger"><i class="material-icons">all_out</i></div>
+                                  <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                      <h4 class="timeline-title">Accompagnement</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                      <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                  <div class="timeline-badge warning"><i class="material-icons">all_out</i></div>
+                                  <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                      <h4 class="timeline-title">Personnalisation</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                      <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                      <p>Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Interagi no mé, cursus quis, vehicula ac nisi. Aenean vel dui dui. Nullam leo erat, aliquet quis tempus a, posuere ut mi. Ut scelerisque neque et turpis posuere pulvinar pellentesque nibh ullamcorper. Pharetra in mattis molestie, volutpat elementum justo. Aenean ut ante turpis. Pellentesque laoreet mé vel lectus scelerisque interdum cursus velit auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac mauris lectus, non scelerisque augue. Aenean justo massa.</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="timeline-badge danger"><i class="material-icons">all_out</i></div>
+                                  <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                      <h4 class="timeline-title">Conception jusqu'à mise en service de l'équipement</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                      <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="timeline-badge danger"><i class="material-icons">all_out</i></div>
+                                  <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                      <h4 class="timeline-title">Satisfaction</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                      <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                                    </div>
+                                  </div>
+                                </li>
+                            </ul>
                         </div>
-                        <!-- /.col-lg-10 -->
                     </div>
 	                
 <!--
@@ -991,7 +1239,7 @@
                                     </div>
                                     <ul class="col-md-10 col-xs-10">
                                         <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:index' %}">Accueil</a></li>
-                                        <li class="cat_list_footer"><a style="font-size: .9em !important;" href="#">Réalisations</a></li>
+                                        <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:samples' %}">Réalisations</a></li>
                                         <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:showrooms' %}">Showrooms</a></li>
                                     </ul>
                                 </span>
@@ -1004,7 +1252,7 @@
                                     </div>
                                     <ul class="col-md-10 col-xs-10">
                                         <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:about_us' %}">Présentation Du Société</a></li>
-                                        <li class="cat_list_footer"><a style="font-size: .9em !important;" href="{% url 'Distrat_ma:engagements' %}">Nos Engagements</a></li>
+                                        <li class="cat_list_footer"><a style="font-size: .9em !important;" href="#">Nos Engagements</a></li>
                                     </ul>
                                 </span>
                             </div>
