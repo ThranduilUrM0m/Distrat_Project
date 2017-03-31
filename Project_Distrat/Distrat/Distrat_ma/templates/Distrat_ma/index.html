@@ -40,6 +40,24 @@
         <link href="{% static 'Distrat_ma/css/demoMaterial.css' %}" rel="stylesheet" />
         
         <style>
+            .media h4 {
+                margin-bottom: 0;
+            }
+            .btn.btn-primary.center-block{
+                padding: 15% 20%;
+            }
+            #logout {
+                overflow: scroll;
+                overflow-x: hidden;
+            }
+            #logout::-webkit-scrollbar {
+                width: 0px;  /* remove scrollbar space */
+                background: transparent;  /* optional: just make scrollbar invisible */
+            }
+            /* optional: show position indicator in red */
+            #logout::-webkit-scrollbar-thumb {
+                background: #FF0000;
+            }
             /*
                 Image credits:
                 uifaces.com (http://uifaces.com/authorized)
@@ -106,7 +124,6 @@
                 margin-left: -2px; 
                 margin-right: 2px;
             }
-            .media-comment { margin-bottom: 20px; }
             .media-replied { margin: 0 0 20px 50px; }
             .media-replied .media-heading { padding-left: 6px; }
 
@@ -565,7 +582,7 @@
                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 ); /* ie6-9 */
             }
             .navbar, .navbar.navbar-default {
-                background-color: #FA9465;
+                background-color: #ffc290;
             }
             .footer{
                 height: 100%;
@@ -868,7 +885,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="{% url 'Distrat_ma:about_us' %}">Présentation du Societé</a>
+                                    <a href="{% url 'Distrat_ma:about_us' %}">Présentation de l'Entreprise</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'Distrat_ma:engagements' %}">Nos Engagements</a>
@@ -953,10 +970,10 @@
                                 <div class="thumbnail second_section_slider_right" style="height: 100%;"></div>
                             </div>
                         </div>
-                        <div class="row" style="height: 100vh">
-                            <div class="container">
-                              <div class="row">
-                                <div class="col-sm-10 col-sm-offset-1" id="logout">
+                        <div class="row" style="height: 100vh; border-top: 1px solid #ddd;">
+                            <div class="container" style="height: 100%;">
+                              <div class="row" style="height: 100%;">
+                                <div style="height: 100%;" class="col-sm-10 col-sm-offset-1" id="logout">
                                     <div class="page-header">
                                         <h2 style="font-family: 'Caslon Book BE Regular'; font-size: 10vh; text-align: center; text-transform: uppercase;">Nos Témoignages</h2>
                                     </div>
@@ -1027,32 +1044,6 @@
                                 </div>
                               </div>
                             </div>
-                            <!-- <h2 style="font-family: 'Caslon Book BE Regular'; font-size: 10vh; text-align: center; text-transform: uppercase;">NOS Témoignages</h2>
-                            <div class="col-md-12 thumbnail" id="postBoxShit" style="height: 80%;">
-                                <form accept-charset="UTF-8"  id="postSubmit" action="{% url 'Distrat_ma:avis_register' %}" method="POST">
-                                {% csrf_token %}
-                                    <div>
-                                        First name: <input class="messageToSend_input" type="text" name="fname"><br><br>
-                                        Last name: <input class="messageToSend_input" type="text" name="lname"><br><br>
-                                        <textarea class="status-box messageToSend" name="postContenu" placeholder="Lancez-vous..."></textarea>
-                                    </div>
-                                    <div class="postingZone">
-                                        <a href="javascript:{}" onclick="document.getElementById('postSubmit').submit(); return false;" class="btn btn-primary postBtn" id="post">Envoyer Votre Avis</a>
-                                    </div>
-                                </form>
-                                <form action="#" name="postList">
-                                    <ul class="posts">
-                                        {% for avis_item in latest_avis_list %}
-                                        <li class='thumbnail'>
-                                            <p class='postContaint'>{{avis_item.avis_text}}</p>
-                                            <div class='row'>
-                                                <p class='postBy pushLeft'>by {{avis_item.f_name}} {{avis_item.l_name|upper}}</p>
-                                            </div>
-                                        </li>
-                                        {% endfor %}
-                                    </ul>
-                                </form>
-                            </div> -->
                         </div>
                         <script type="text/javascript">
                             /*Dom*/
@@ -1164,17 +1155,6 @@
                             });
                             /*Dom end*/
                         </script>
-                        <!-- <div class="row">
-                            <div class="col-md-4">
-                                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fdistrat.cuisines.portes%2Fposts%2F273153349792881%3A0&width=500" width="500" height="660vh" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                            </div>
-                            <div class="col-md-4">
-                                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fdistrat.cuisines.portes%2Fposts%2F272717883169761%3A0&width=500" width="500" height="590" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                            </div>
-                            <div class="col-md-4">
-                                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fdistrat.cuisines.portes%2Fposts%2F270360736738809%3A0&width=500" width="500" height="590" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
